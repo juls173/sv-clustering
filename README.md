@@ -11,14 +11,11 @@ You can also choose the number of locations you want to generate, I choose 1,000
 2. We can parse through the generated JSON and request images from the [Google Street View API](https://developers.google.com/maps/documentation/streetview/request-streetview) using the coordinates generated. I requested 4 images per location, facing 0, 90, 180, and 270 degrees, then stitched these images together to get a 360-degree panorama. I downloaded all these images. 
 3. I then used the StreetCLIP transformer to generate embeddings for each stitched panorama, applied L2 normalization to these embeddings, saved them to an embeddings folder, and created a metadata file that tracks which embeddings corresponded to which panoramas.
 4. Next, I used the sci-kit learn library to use K-Means clustering to group locations that are closer together in the embedding space. I also experimented with using PCA for dimensionality reduction and differing numbers of clusters.  
-5. Lastly, we can write the generated clusters as metadata to each location in the original JSON as map-making.app tags.
-6. 
+5. Lastly, we can write the generated clusters as metadata to each location in the original JSON as a map-making.app tag.
+
 ### Results
-Here are maps of the resulting clusters for
-18 clusters:
-<img src="https://github.com/user-attachments/assets/28a8a1f7-a119-4189-8f33-56d8c59de1d6" width="480">
-5 clusters:
-<img src="https://github.com/user-attachments/assets/22b2e2fc-dc82-4898-8d2d-8d1efab9ca0e" height="480">
+Here are maps of the resulting clusters
+18 clusters: <img src="https://github.com/user-attachments/assets/28a8a1f7-a119-4189-8f33-56d8c59de1d6" width="480"> 5 clusters:<img src="https://github.com/user-attachments/assets/22b2e2fc-dc82-4898-8d2d-8d1efab9ca0e" height="480">
 The clusters generally have a lot of overlap with other clusters but are still fairly geographically localized. In the 5-cluster example, there are regions where 90% of the locations ended up in a single cluster, such as the Atacama desert and Aysén, which is a really good sign. 
 Within the Atacama desert, the only locations that didn't end up in the main cluster were urban or heavily vegetated, which is what we'd intuitively expect to see, as these locations are more visually similar/could be confused with other parts of Chile. 
 
