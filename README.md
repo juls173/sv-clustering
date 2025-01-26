@@ -24,7 +24,7 @@ The clusters generally have a lot of overlap with other clusters but are still f
 
 Within the Atacama desert, the only locations that didn't end up in the main cluster were urban or heavily vegetated, which is what we'd intuitively expect to see, as these locations are more visually similar/could be confused with other parts of Chile. 
 
-Here are two locations that ended up in the same cluster but, in reality, are 2,100 km apart
+Here are two locations that ended up in the same cluster but, in reality, are 3,500 km apart. [location 1](https://maps.app.goo.gl/3XTrSsRdFn3FUTuy7) [location 2](https://maps.app.goo.gl/3q2gKqgFK4fvaffg8)
 ![image](https://github.com/user-attachments/assets/875c2030-18fc-41d8-af9f-3a5c001bd998)
 ![image](https://github.com/user-attachments/assets/18eb6c82-82d3-46bf-9168-f629ca43156c)
 The results are fairly interesting, but I probably shouldn't anthropomorphize them. A way to rigorously test the clustering efficacy or how cluster-able the images were in the first place is by calculating the silhouette score of the clusters and their embeddings, which I've included the code for. 
