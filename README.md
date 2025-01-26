@@ -1,6 +1,6 @@
 # Street View Photosphere Clustering
-Scalable. reproducible pipeline for clustering Google Street View photospheres based on visual similarity.
-I used the [StreetCLIP transformer](https://huggingface.co/geolocal/StreetCLIP) to embed images, then K-means to cluster them. Uses https://map-generator.vercel.app/ to generate the locations and the Google Street View API to get the panoramas.
+Scalable, reproducible pipeline for clustering Google Street View photospheres based on their visual similarity.
+I used the [StreetCLIP transformer](https://huggingface.co/geolocal/StreetCLIP) to embed images, then the k-means algorithm to cluster them without any regard to their geographical location. Uses https://map-generator.vercel.app/ to generate the locations' coordinates and the Google Street View API to obtain the panoramas.
 The main goal of this project was to see what categories of visually similar locations a model pre-trained on Street View images would come up with and how these differed from my own and other Geoguessr players' categories. This can also provide pre-made categories or chunks of visually similar locations to learn from.
 
 ### Steps (more details/code in gsvembed.ipynb notebook): 
